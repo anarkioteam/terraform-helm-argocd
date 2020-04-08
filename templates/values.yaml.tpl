@@ -16,6 +16,16 @@ server:
 
   config:
     url: https://${ argocd_server_host }
+    dex.config: |
+      connectors:
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: ${ argocd_github_client_id }
+            clientSecret: ${ argocd_github_client_secret }
+            orgs:
+              - name: ${ argocd_github_org_name }
 
   serviceAccount:
     annotations:

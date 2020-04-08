@@ -17,8 +17,11 @@ resource "helm_release" "argocd" {
     templatefile(
       "${path.module}/templates/values.yaml.tpl",
       {
-        "argocd_server_host"      = var.argocd_server_host
-        "eks_iam_argocd_role_arn" = data.aws_iam_role.argocd.arn
+        "argocd_server_host"          = var.argocd_server_host
+        "eks_iam_argocd_role_arn"     = data.aws_iam_role.argocd.arn
+        "argocd_github_client_id"     = var.argocd_github_client_id
+        "argocd_github_client_secret" = var.argocd_github_client_secret
+        "argocd_github_org_name"      = var.argocd_github_org_name
 
         "argocd_ingress_enabled"                 = var.argocd_ingress_enabled
         "argocd_ingress_tls_acme_enabled"        = var.argocd_ingress_tls_acme_enabled
