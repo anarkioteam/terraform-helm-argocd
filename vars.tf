@@ -49,3 +49,18 @@ variable "eks_iam_argocd_role_name" {
   description = "IAM EKS service account role name for Argo CD"
   type        = string
 }
+
+variable "argocd_github_client_id" {
+  description = "GitHub OAuth application client id (see Argo CD user management guide)"
+  type        = string
+}
+
+variable "argocd_github_client_secret" {
+  description = "GitHub OAuth application client secret (see Argo CD user management guide)"
+  type        = string
+}
+
+variable "argocd_github_org_name" {
+  description = "Organisation to restrict Argo CD to"
+  type        = string
+}
