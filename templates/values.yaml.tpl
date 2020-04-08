@@ -16,6 +16,7 @@ server:
 
   config:
     url: https://${ argocd_server_host }
+    admin.enabled: "false"
     dex.config: |
       connectors:
         - type: github
